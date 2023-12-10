@@ -1,0 +1,5 @@
+.idea
+/venv/
+/operations.json
+/requirements.txt
+/.gitignore
