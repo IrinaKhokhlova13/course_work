@@ -1,5 +1,5 @@
 import json
-
+from datetime import datetime
 
 def read_json():
     '''
@@ -32,3 +32,13 @@ def sort_list_by_date(data_list):
     '''
     data_list = sorted(data_list, key=lambda x: x["date"], reverse=True)
     return data_list[:5]
+
+
+
+def edit_date(date: str):
+    '''
+    Возвращает дату в нужном формате
+    '''
+    date = datetime.strptime(date, "%Y-%m-%dT%H:%M:%S.%f")
+    date = datetime.strftime(date, "%d.%m.%Y")
+    return date
