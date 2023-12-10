@@ -23,3 +23,12 @@ def filter_data_list(data_list):
         else:
             continue
     return list
+
+
+
+def sort_list_by_date(data_list):
+    '''
+    Возвращает отсортированный список по полю date (дата), на выходе список из 5 элементов
+    '''
+    data_list = sorted(data_list, key=lambda x: x["date"], reverse=True)
+    return data_list[:5]
