@@ -42,3 +42,13 @@ def edit_date(date: str):
     date = datetime.strptime(date, "%Y-%m-%dT%H:%M:%S.%f")
     date = datetime.strftime(date, "%d.%m.%Y")
     return date
+
+
+def hide_account_number(account_number:str, to=False):
+    '''
+    Возвращает скрытый номер счета в формате **XXXX, или скрытый номер карты в формате ХХХХ ХХ** **** ХХХХ
+    '''
+    if not to:
+        return f"{account_number[:4]} {account_number[4:6]}** **** {account_number[-4:]}"
+    else:
+        return f"** {account_number[-4:]}"
