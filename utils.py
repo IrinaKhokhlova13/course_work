@@ -44,11 +44,14 @@ def edit_date(date: str):
     return date
 
 
-def hide_account_number(account_number:str, to=False):
+def hide_account_number(account_number:str):
     '''
     Возвращает скрытый номер счета в формате **XXXX, или скрытый номер карты в формате ХХХХ ХХ** **** ХХХХ
     '''
-    if not to:
-        return f"{account_number[:4]} {account_number[4:6]}** **** {account_number[-4:]}"
+    if "Счет" in account_number:
+        return f"Счет ** {account_number[-4:]}"
+    elif account_number != "":
+        return f"{account_number[:-16]} {account_number[-16:-12]} {account_number[-12:-10]}** **** {account_number[-4:]}"
     else:
-        return f"** {account_number[-4:]}"
+        return "Оплата наличными средствами"
+
