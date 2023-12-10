@@ -49,7 +49,7 @@ def hide_account_number(account_number:str):
     Возвращает скрытый номер счета в формате **XXXX, или скрытый номер карты в формате ХХХХ ХХ** **** ХХХХ
     '''
     if "Счет" in account_number:
-        return f"Счет ** {account_number[-4:]}"
+        return f"Счет **{account_number[-4:]}"
     elif account_number != "":
         return f"{account_number[:-16]} {account_number[-16:-12]} {account_number[-12:-10]}** **** {account_number[-4:]}"
     else:
