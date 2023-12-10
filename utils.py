@@ -53,5 +53,5 @@ def hide_account_number(account_number:str):
     elif account_number != "":
         return f"{account_number[:-16]} {account_number[-16:-12]} {account_number[-12:-10]}** **** {account_number[-4:]}"
     else:
-        return "Оплата наличными средствами"
+        return "Наличные средства"
 
