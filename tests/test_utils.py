@@ -34,7 +34,7 @@ def list(): # имя фикстуры любое
 }
 ]
 
-data_list = [{"date": "2018-09-12T21:27:25.241689"}, {"date": "2019-12-08T22:46:21.935582"}]
+date_list = [{"date": "2018-09-12T21:27:25.241689"}, {"date": "2019-12-08T22:46:21.935582"}]
 date_format = "2019-12-08T22:46:21.935582"
 
 
@@ -44,6 +44,9 @@ def test_filter_data_list(list):
 
 def test_sort_list_by_date():
     assert utils.sort_list_by_date([]) == []
-    assert utils.sort_list_by_date(data_list) == [{"date": "2019-12-08T22:46:21.935582"}, {"date": "2018-09-12T21:27:25.241689"}]
+    assert utils.sort_list_by_date(date_list) == [{"date": "2019-12-08T22:46:21.935582"}, {"date": "2018-09-12T21:27:25.241689"}]
 
+
+def test_edit_date():
+    assert utils.edit_date(date_format) == "08.12.2019"
 
