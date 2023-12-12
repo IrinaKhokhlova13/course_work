@@ -37,6 +37,10 @@ def list(): # имя фикстуры любое
 date_list = [{"date": "2018-09-12T21:27:25.241689"}, {"date": "2019-12-08T22:46:21.935582"}]
 date_format = "2019-12-08T22:46:21.935582"
 
+account_number_1 = "Visa Platinum 1246377376343588"
+account_number_2 = "Счет 14211924144426031657"
+
+
 
 def test_filter_data_list(list):
     assert utils.filter_data_list([]) == []
@@ -51,3 +55,7 @@ def test_sort_list_by_date():
 def test_edit_date():
     assert utils.edit_date(date_format) == "08.12.2019"
 
+
+def test_hide_account_number():
+    assert utils.hide_account_number(account_number_1) == "Visa Platinum  1246 37** **** 3588"
+    assert utils.hide_account_number(account_number_2) == "Счет **1657"
