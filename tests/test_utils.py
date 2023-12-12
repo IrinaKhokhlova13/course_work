@@ -59,3 +59,4 @@ def test_edit_date():
 def test_hide_account_number():
     assert utils.hide_account_number(account_number_1) == "Visa Platinum  1246 37** **** 3588"
     assert utils.hide_account_number(account_number_2) == "Счет **1657"
+    assert utils.hide_account_number("") == "Наличные средства"
