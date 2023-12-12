@@ -1,0 +1,8 @@
+.idea
+/venv/
+/operations.json
+/requirements.txt
+/.gitignore
+/.pytest_cache/
+/tests/.pytest_cache/
+/.coverage
