@@ -14,10 +14,10 @@ def filter_data_list(data_list):
     Возвращает отфильтрованный список по полю state со значением EXECUTED
     '''
     list=[]
-    for i in data_list:
-        if i != {}:
-            if i["state"] == "EXECUTED":
-                list.append(i)
+    for operation in data_list:
+        if operation != {}:
+            if operation["state"] == "EXECUTED":
+                list.append(operation)
             else:
                 continue
         else:
