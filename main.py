@@ -5,21 +5,21 @@ data_list = read_json()
 data_list = filter_data_list(data_list)
 data_list = sort_list_by_date(data_list)
 
-for i in data_list:
+for operation in data_list:
     #Вывод даты в правильно формате и типа операции
-    print(f"{edit_date(i['date'])} {i['description']}")
+    print(f"{edit_date(operation['date'])} {operation['description']}")
 
     #Вывод информации номера карты(если он есть), номера счета(если он есть) или Оплата наличными
-    if "from" in i and "to" in i:
-        print(f"{hide_account_number(i['from'])} -> {hide_account_number(i['to'])}")
-    elif "from" not in i and "to" in i:
-        print(f"{hide_account_number('')} -> {hide_account_number(i['to'])}")
-    elif "from" in i and "to" not in i:
-        print(f"{hide_account_number(i['from'])} -> {hide_account_number('')}")
+    if "from" in operation and "to" in operation:
+        print(f"{hide_account_number(operation['from'])} -> {hide_account_number(operation['to'])}")
+    elif "from" not in operation and "to" in operation:
+        print(f"{hide_account_number('')} -> {hide_account_number(operation['to'])}")
+    elif "from" in operation and "to" not in operation:
+        print(f"{hide_account_number(operation['from'])} -> {hide_account_number('')}")
     else:
         print(hide_account_number(""))
 
     #Вывод суммы и валюты
-    print(f"{i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}")
-    print ("\n")
+    print(f"{operation['operationAmount']['amount']} {operation['operationAmount']['currency']['name']}")
+    print("\n")
 
